@@ -1,4 +1,4 @@
-# **Resource Newsletter (Backend)**
+# **Resource Newsletter (Server)**
 
 A newsletter application that send mail about some usefull technical resource to the subscripted user's email in every week.
 
