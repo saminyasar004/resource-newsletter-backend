@@ -1,0 +1,26 @@
+{
+    "name": "resource-newsletter-planetscale-server",
+    "version": "1.0.0",
+    "description": "A newsletter application that send mail about some usefull technical resource to the subscripted user's email in every week.",
+    "main": "./server.js",
+    "scripts": {
+        "start": "node .",
+        "dev": "nodemon .",
+        "test": "nodemon ./src/test/script.js"
+    },
+    "keywords": [],
+    "author": "Samin Yasar <yasarsamin57@gmail.com>",
+    "license": "MIT",
+    "dependencies": {
+        "bcrypt": "^5.0.1",
+        "cors": "^2.8.5",
+        "dotenv": "^16.0.1",
+        "express": "^4.18.1",
+        "jsonwebtoken": "^8.5.1",
+        "mysql2": "^2.3.3",
+        "nodemailer": "^6.7.7"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.19"
+    }
+}
