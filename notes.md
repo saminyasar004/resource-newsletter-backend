@@ -35,5 +35,5 @@ A newsletter application that send mail about some usefull technical resource to
 ## **Subscribers Endpoints**
 
 -   `api/v1/newsletter/` - `POST` - Subscribe a new email address
--   `/api/v1/newsletter/verify/:id/:email/:subscribedAt` - `GET` - Verify an email address (via mail)
+-   `/api/v1/newsletter/verify/:id/:email/:subscribedAt` - `GET` - Verify an email address (via email)
 -   `/api/v1/newsletter/verify/:id/:email/:subscribedAt` - `DELETE` - Unsubscribe an email address (via email)

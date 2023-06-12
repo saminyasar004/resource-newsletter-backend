@@ -78,7 +78,7 @@ newsletterController.subscribeEmail = async (req, res) => {
                 sendVerificationMail(email, verificationUrl);
                 responseSender(res, 201, {
                     message:
-                        "You have successfully subscripted our newsletter.",
+                        "You have successfully subscripted our newsletter. We've sent a verification mail in your email please verify your email.",
                 });
             }
         } catch (err) {

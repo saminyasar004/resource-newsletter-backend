@@ -64,6 +64,25 @@ newsletterService.getVerifiedEmails = () => {
 };
 
 /**
+ * Find unverified emails from the database
+ *
+ * @returns {Promise}
+ */
+newsletterService.getUnverifiedEmails = () => {
+    return new Promise((res, rej) => {
+        const findQuery = `SELECT email FROM newsletter WHERE verified = 'false';`;
+        db.databaseConnection.query(findQuery, (findErr, findResult) => {
+            if (!findErr) {
+                res(findResult);
+            } else {
+                console.log("Error occures while finding unverified emails.");
+                rej(new Error(findErr.message));
+            }
+        });
+    });
+};
+
+/**
  * Verify an email
  *
  * @param {String} email

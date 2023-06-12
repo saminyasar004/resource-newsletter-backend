@@ -20,8 +20,20 @@ authorController.getAuthor = async (_req, res) => {
     try {
         const author = await authorService.findAll();
         delete author[0].password;
-        const verifiedEmails = await newsletterService.getVerifiedEmails();
+        const verifiedEmails = [
+            ...(await newsletterService.getVerifiedEmails()),
+        ].reduce((acc, el) => {
+            acc.push(el.email);
+            return acc;
+        }, []);
+        const unverifiedEmails = [
+            ...(await newsletterService.getUnverifiedEmails()),
+        ].reduce((acc, el) => {
+            acc.push(el.email);
+            return acc;
+        }, []);
         author[0].verifiedEmails = verifiedEmails;
+        author[0].unverifiedEmails = unverifiedEmails;
         responseSender(res, 200, {
             message: author[0],
         });

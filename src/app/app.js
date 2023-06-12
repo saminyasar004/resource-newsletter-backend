@@ -16,8 +16,8 @@ dotenv.config(path.join(__dirname, "../../.env"));
 app.use(express.json());
 app.use(cors());
 
-// router
-app.get("/", (req, res) => {
+// default health check router
+app.get("/health", (_req, res) => {
     res.status(200).json({
         message: "Hello world.",
     });
